@@ -30,13 +30,9 @@ body{font-family:'Pretendard',sans-serif;color:#f1eefc;min-height:100%;margin:0;
 .glass-card{position:relative;z-index:1;background:rgba(255,255,255,.06);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
   border:1px solid rgba(255,255,255,.16);box-shadow:0 20px 50px rgba(20,10,40,.35), inset 0 1px 0 rgba(255,255,255,.08);}
 .letter-content{max-height:0;overflow:hidden;transition:max-height .6s ease-out,opacity .6s ease-out;opacity:0}
-.letter-content.open{max-height:600px;opacity:1}
-.gallery-image{width:100%;height:100%;object-fit:cover}
-#photoInput{display:none}
-.glow-ring{background:conic-gradient(from 0deg,#e9d5ff,#c4b5fd,#f5d0fe,#e9d5ff);box-shadow:0 0 40px rgba(196,181,253,.45)}
-.photo-cap{position:absolute;left:0;right:0;bottom:0;padding:.4rem .6rem;display:flex;align-items:center;justify-content:space-between;
-  background:linear-gradient(180deg,rgba(20,10,35,0),rgba(15,8,30,.75));font-size:.7rem;color:#f1eefc}
+.letter-content.open{max-height:2000px;opacity:1}
 .title-grad{background:linear-gradient(90deg,#e9d5ff,#c4b5fd 40%,#f5d0fe);-webkit-background-clip:text;background-clip:text;color:transparent}
+.arrow-icon{transition:transform .3s}
 </style>
 </head>
 <body>
@@ -51,7 +47,7 @@ body{font-family:'Pretendard',sans-serif;color:#f1eefc;min-height:100%;margin:0;
 </header>
 
 <section class="glass-card rounded-3xl p-6 sm:p-8 text-center space-y-6">
-<div class="relative w-40 h-40 sm:w-48 sm:h-48 mx-auto rounded-full p-1.5 glow-ring">
+<div class="relative w-40 h-40 sm:w-48 sm:h-48 mx-auto rounded-full p-1.5" style="background:conic-gradient(from 0deg,#e9d5ff,#c4b5fd,#f5d0fe,#e9d5ff);box-shadow:0 0 40px rgba(196,181,253,.45)">
 <div class="w-full h-full rounded-full bg-[#241a3f] flex items-center justify-center overflow-hidden"><span class="text-6xl">🎂</span></div>
 </div>
 <div class="space-y-2"><h2 class="text-2xl font-bold text-white">사랑하는 나의 사람에게</h2>
@@ -59,11 +55,11 @@ body{font-family:'Pretendard',sans-serif;color:#f1eefc;min-height:100%;margin:0;
 </section>
 
 <section class="glass-card rounded-3xl p-6 sm:p-8 space-y-4">
-<div class="flex items-center justify-between cursor-pointer" onclick="toggleLetter()">
+<div class="flex items-center justify-between cursor-pointer" onclick="toggleLetterBox(this)">
 <div class="flex items-center space-x-3"><span class="text-2xl">💌</span><div><h3 class="font-bold text-white text-lg">너에게 전하는 작은 마음</h3><p class="text-xs text-violet-200/70">클릭해서 편지를 열어보세요</p></div></div>
-<span id="arrow-icon" class="text-xl text-violet-200 transition-transform duration-300">⌄</span>
+<span class="arrow-icon text-xl text-violet-200">⌄</span>
 </div>
-<div id="letter" class="letter-content text-violet-100/90 text-sm sm:text-base leading-relaxed border-t border-white/10 pt-4 space-y-3">
+<div class="letter-content text-violet-100/90 text-sm sm:text-base leading-relaxed border-t border-white/10 pt-4 space-y-3">
 <p>설아 나 해달! 일단 생일 진짜 많이 많이 축하해!!</p>
 <p>편지 한번 써주고 싶었는데 막상 쓰려니까 무슨 말부터 해야 될지 모르겠네 ㅋㅋ</p>
 <p>평소에는 방송에서 장난도 잘 치고 하고 싶은 말도 잘하면서 이런 거 쓰려니까 괜히 부끄럽기도 하고...</p>
@@ -103,11 +99,11 @@ body{font-family:'Pretendard',sans-serif;color:#f1eefc;min-height:100%;margin:0;
 </section>
 
 <section class="glass-card rounded-3xl p-6 sm:p-8 space-y-4">
-<div class="flex items-center justify-between cursor-pointer" onclick="toggleLetter2()">
+<div class="flex items-center justify-between cursor-pointer" onclick="toggleLetterBox(this)">
 <div class="flex items-center space-x-3"><span class="text-2xl">💜</span><div><h3 class="font-bold text-white text-lg">또 하나의 편지함</h3><p class="text-xs text-violet-200/70">클릭해서 편지를 열어보세요</p></div></div>
-<span id="arrow-icon2" class="text-xl text-violet-200 transition-transform duration-300">⌄</span>
+<span class="arrow-icon text-xl text-violet-200">⌄</span>
 </div>
-<div id="letter2" class="letter-content text-violet-100/90 text-sm sm:text-base leading-relaxed border-t border-white/10 pt-4 space-y-3">
+<div class="letter-content text-violet-100/90 text-sm sm:text-base leading-relaxed border-t border-white/10 pt-4 space-y-3">
 <p>to. 설여왕님♥</p>
 <p>여왕님, 생일 축하해요! 세상에서 제일 행복하고 아름다운 하루 되세요</p>
 <p>고귀한 탄생 축하드립니댜 내사랑 맛있는거 왕창 드시구 제생각도 쪼끔 해쥬세요</p>
@@ -117,11 +113,11 @@ body{font-family:'Pretendard',sans-serif;color:#f1eefc;min-height:100%;margin:0;
 </section>
 
 <section class="glass-card rounded-3xl p-6 sm:p-8 space-y-4">
-<div class="flex items-center justify-between cursor-pointer" onclick="toggleLetter2()">
+<div class="flex items-center justify-between cursor-pointer" onclick="toggleLetterBox(this)">
 <div class="flex items-center space-x-3"><span class="text-2xl">💜</span><div><h3 class="font-bold text-white text-lg">또 하나의 편지함</h3><p class="text-xs text-violet-200/70">클릭해서 편지를 열어보세요</p></div></div>
-<span id="arrow-icon3" class="text-xl text-violet-200 transition-transform duration-300">⌄</span>
+<span class="arrow-icon text-xl text-violet-200">⌄</span>
 </div>
-<div id="letter2" class="letter-content text-violet-100/90 text-sm sm:text-base leading-relaxed border-t border-white/10 pt-4 space-y-3">
+<div class="letter-content text-violet-100/90 text-sm sm:text-base leading-relaxed border-t border-white/10 pt-4 space-y-3">
 <p>설아~! 곧 생일이라면서?</p>
 <p>생일 너무너무 축하해!!🎉🎂</p>
 <p>설이랑도 알게된지는 꽤 된거 같은데..ㅋㅋ</p>
@@ -135,22 +131,22 @@ body{font-family:'Pretendard',sans-serif;color:#f1eefc;min-height:100%;margin:0;
 </section>
 
 <section class="glass-card rounded-3xl p-6 sm:p-8 space-y-4">
-<div class="flex items-center justify-between cursor-pointer" onclick="toggleLetter2()">
+<div class="flex items-center justify-between cursor-pointer" onclick="toggleLetterBox(this)">
 <div class="flex items-center space-x-3"><span class="text-2xl">💜</span><div><h3 class="font-bold text-white text-lg">또 하나의 편지함</h3><p class="text-xs text-violet-200/70">클릭해서 편지를 열어보세요</p></div></div>
-<span id="arrow-icon4" class="text-xl text-violet-200 transition-transform duration-300">⌄</span>
+<span class="arrow-icon text-xl text-violet-200">⌄</span>
 </div>
-<div id="letter2" class="letter-content text-violet-100/90 text-sm sm:text-base leading-relaxed border-t border-white/10 pt-4 space-y-3">
+<div class="letter-content text-violet-100/90 text-sm sm:text-base leading-relaxed border-t border-white/10 pt-4 space-y-3">
 <p>to 설</p>
 <p>누나 아뇽 나 둘리야~ 누나 생일 축하해~~ 우와~~~~~👏👏👏</p>
 <p>내가 누나를 만난지 대충 2개월?정도 인거 같아.</p>
-<p> 그동안 누나랑 함께하면서 내가 부족한 부분도 고치고 누나랑 함께해서 좋은 기억으로만 가득한거 같아.</p>
+<p>그동안 누나랑 함께하면서 내가 부족한 부분도 고치고 누나랑 함께해서 좋은 기억으로만 가득한거 같아.</p>
 <p>누나가 지난 달부터 하고 싶다고 말한 노초는 내가 최대한 할 수 있는곳까지 해줄께.</p>
 <p>누나가 힘들때에는 나랑 눈꽃단들이 있으니깐 부탁하고 싶은거 있으면 언제든지 편하게 부탁하구</p>
 <p>예전부터 느낀건데 누나가 바빠서 방송만 키고 다닐때.. 솔직히 조금 미안했어</p>
 <p>다른 사람들은 스푼을 쏘는데 난 해주는거 하나 없이 그냥 온도만 올리고 있으니깐...</p>
 <p>그래서 누나한테 미안했는데 이렇게 편지로 작성을 하구 다른 사람들한테 편지를 받으니깐 누나를 사랑해주는 사람이 많다는걸 다시 알았어</p>
 <p>이런말 저런말 하다가 너무 말이 많아졌는데 누나를 사랑하는 눈꽃단중 1명으로써 사랑하고 뭐든 부탁해도 내가 다들어줄거니깐 걱정마</p>
-<p>누나 생일축하하고 이 편지들을 좋아해줬으면 좋겠어~ 생일 축하해~
+<p>누나 생일축하하고 이 편지들을 좋아해줬으면 좋겠어~ 생일 축하해~</p>
 <p>from 둘리</p>
 </div>
 </section>
@@ -163,27 +159,25 @@ body{font-family:'Pretendard',sans-serif;color:#f1eefc;min-height:100%;margin:0;
 
 <script>
 const scene=document.getElementById('scene');
-// stars
 for(let i=0;i<50;i++){const s=document.createElement('div');s.classList.add('star');const size=Math.random()*3+1;
  s.style.width=size+'px';s.style.height=size+'px';s.style.top=Math.random()*80+'%';s.style.left=Math.random()*100+'%';
  s.style.animationDuration=(Math.random()*3+2)+'s';s.style.animationDelay=(Math.random()*3)+'s';scene.appendChild(s)}
-// moon
 const moon=document.createElement('div');moon.className='moon';scene.appendChild(moon);
-// clouds
 const cloudDefs=[[10,30,260,60],[60,5,300,70],[5,85,320,60],[55,78,260,55]];
 cloudDefs.forEach(([l,t,w,h])=>{const c=document.createElement('div');c.className='cloud';
  c.style.left=l+'%';c.style.top=t+'%';c.style.width=w+'px';c.style.height=h+'px';scene.appendChild(c)});
-// butterflies
 const flyPos=[[8,45],[88,55],[15,70],[85,25]];
 flyPos.forEach(([l,t],i)=>{const b=document.createElement('div');b.className='butterfly';b.style.left=l+'%';b.style.top=t+'%';
  b.style.animationDelay=(i*0.7)+'s';b.innerHTML='<svg width="26" height="20" viewBox="0 0 26 20"><path d="M13 10 C10 0,0 0,2 8 C0 14,10 14,13 10 Z" fill="#e9d5ff" opacity="0.85"/><path d="M13 10 C16 0,26 0,24 8 C26 14,16 14,13 10 Z" fill="#f5d0fe" opacity="0.85"/></svg>';
  scene.appendChild(b)});
 
-function toggleLetter(){const letter=document.getElementById('letter'),arrow=document.getElementById('arrow-icon');
- letter.classList.toggle('open');arrow.style.transform=letter.classList.contains('open')?'rotate(180deg)':'rotate(0deg)'}
-
-function toggleLetter2(){const letter=document.getElementById('letter2'),arrow=document.getElementById('arrow-icon2');
- letter.classList.toggle('open');arrow.style.transform=letter.classList.contains('open')?'rotate(180deg)':'rotate(0deg)'}
+function toggleLetterBox(headerEl){
+ const section=headerEl.closest('section');
+ const content=section.querySelector('.letter-content');
+ const arrow=headerEl.querySelector('.arrow-icon');
+ content.classList.toggle('open');
+ arrow.style.transform=content.classList.contains('open')?'rotate(180deg)':'rotate(0deg)';
+}
 
 function triggerCelebration(){const toast=document.getElementById('toast');
  toast.classList.remove('translate-y-16','opacity-0');toast.classList.add('translate-y-0','opacity-100');
